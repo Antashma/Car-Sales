@@ -4,7 +4,10 @@ export const ACTIONS = {
     ADD_FEATURE: 'ADD_FEATURE'
 }
 
-export const addFeature = (dispatch) => {
-    return dispatch({type: ACTIONS.ADD_FEATURE})
-    
+export const addFeature = (feature) => {
+    console.log('feature value', feature)
+    return {      
+        type: ACTIONS.ADD_FEATURE,
+        payload: feature
+    }
   }

@@ -3,20 +3,18 @@ import { ACTIONS } from '../actions'
 
 const initialState = {...data}
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case ACTIONS.ADD_FEATURE:
             return {
                 ...state,
-                additonalPrice: {...state.additonalPrice} + 15,
+                additonalPrice: {...state.additonalPrice} + action.payload.price,
                 car: { 
                     ...state.car,
-                    features: [...state.car.features, 'new feature']
+                    features: [...state.car.features, action.payload.name]
                 }
             };
         default:
             return state;
     };
 };
-
-export default reducer;

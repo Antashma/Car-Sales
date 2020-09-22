@@ -6,6 +6,8 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
+import {addFeature} from './actions';
+
 const App = (props) => {
 /* MOVED CONST STATE TO DATA.JS */
 
@@ -18,7 +20,7 @@ const App = (props) => {
         <AddedFeatures car={props.car} />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
+        <AdditionalFeatures additionalFeatures={props.additionalFeatures} addFeature={props.addFeature}/>
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
@@ -33,4 +35,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps, {addFeature})(App);
