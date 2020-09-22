@@ -8,10 +8,10 @@ export const reducer = (state = initialState, action) => {
         case ACTIONS.ADD_FEATURE:
             return {
                 ...state,
-                additonalPrice: {...state.additonalPrice} + action.payload.price,
+                additionalPrice: state.additionalPrice + action.payload.price,
                 car: { 
                     ...state.car,
-                    features: [...state.car.features, action.payload.name]
+                    features: [...state.car.features, action.payload]
                 }
             };
         default:
