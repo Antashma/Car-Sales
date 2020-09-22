@@ -14,6 +14,17 @@ export const reducer = (state = initialState, action) => {
                     features: [...state.car.features, action.payload]
                 }
             };
+        case ACTIONS.REMOVE_FEATURE:
+            const newFeaturesArr = state.car.features.filter(feature => feature.id !== action.payload.id);
+            console.log(newFeaturesArr);
+            return {
+                ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
+                car: {
+                    ...state.car,
+                    features:[...newFeaturesArr]
+                }
+            }
         default:
             return state;
     };

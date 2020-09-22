@@ -1,7 +1,6 @@
 export const ACTIONS = {
-/*     INCREASE_ADDITIONAL: 'INCREMENT_ADDITIONAL',
-    DECREASE_ADDITIONAL: 'DECREASE_ADDITIONAL', */
-    ADD_FEATURE: 'ADD_FEATURE'
+    ADD_FEATURE: 'ADD_FEATURE',
+    REMOVE_FEATURE: 'REMOVE_FEATURE'
 }
 
 export const addFeature = (feature) => {
@@ -10,4 +9,11 @@ export const addFeature = (feature) => {
         type: ACTIONS.ADD_FEATURE,
         payload: feature
     }
+  }
+
+  export const removeFeature = (feature) => {
+      return {
+          type: ACTIONS.REMOVE_FEATURE,
+          payload: feature
+      }
   }
