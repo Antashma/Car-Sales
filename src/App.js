@@ -8,6 +8,9 @@ import Total from './components/Total';
 
 const App = (props) => {
 /* MOVED CONST STATE TO DATA.JS */
+
+ 
+
   return (
     <div className="boxes">
       <div className="box">
