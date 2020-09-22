@@ -1,10 +1,22 @@
-const priceReducer = (state = 0, action) => {
+import { data } from '../data';
+import { ACTIONS } from '../actions'
+
+const initialState = {...data}
+
+const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'INCREMENT':
-            return state + 1 ;
-        case 'DECREMENT':
-            return state - 1;
+        case ACTIONS.ADD_FEATURE:
+            return {
+                ...state,
+                additonalPrice: {...state.additonalPrice} + 15,
+                car: { 
+                    ...state.car,
+                    features: [...state.car.features, 'new feature']
+                }
+            };
         default:
             return state;
-    }  
-}
+    };
+};
+
+export default reducer;
